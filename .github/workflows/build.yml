@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: web_ui.h matches web/
-        run: |
-          python3 tools/embed_web.py
-          git diff --exit-code -- iUART/web_ui.h
+        run: python3 tools/embed_web.py --check
 
   firmware:
     needs: web
