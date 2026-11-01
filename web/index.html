@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070707" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+<title>iUART</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070707'/%3E%3Cpath d='M18 22l10 10-10 10M32 44h14' stroke='%237cf5c8' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"><i></i><i></i></div>
+
+<header class="bar">
+  <div class="brand">
+    <span class="chip">iUART</span>
+    <span class="tagline" id="board">wireless serial console</span>
+  </div>
+  <div class="pills">
+    <span class="pill" id="link"><i class="dot"></i><span>connecting…</span></span>
+    <span class="pill" id="ip" title="Address of this console">–</span>
+    <span class="pill" id="rssi" title="Wi-Fi signal">–</span>
+    <span class="pill hide-sm" id="uptime" title="Uptime">–</span>
+  </div>
+</header>
+
+<main class="console glass">
+  <div class="toolbar">
+    <div class="segmented" id="uarts" role="tablist" aria-label="Serial port"></div>
+    <label class="select">
+      <span>baud</span>
+      <select id="baud">
+        <option>9600</option><option>19200</option><option>38400</option><option>57600</option>
+        <option selected>115200</option><option>230400</option><option>460800</option><option>921600</option><option>1500000</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="autoscroll" checked><span>autoscroll</span></label>
+    <label class="toggle hide-sm"><input type="checkbox" id="stamps"><span>time</span></label>
+    <span class="spacer"></span>
+    <span class="counter" id="muted" title="Lines from MUTED_LINES in config.h are counted instead of printed">muted × <b>0</b></span>
+    <button class="icon" id="download" type="button" title="Save log" aria-label="Save log"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg></button>
+    <button class="icon" id="clear" type="button" title="Clear" aria-label="Clear"><svg viewBox="0 0 24 24"><path d="M5 7h14M10 11v6m4-6v6M7 7l1 12h8l1-12M9 7V4h6v3"/></svg></button>
+  </div>
+
+  <div class="screen-wrap">
+    <pre class="screen" id="screen" tabindex="0" aria-live="polite"></pre>
+  </div>
+
+  <div class="keys" id="keys">
+    <button type="button" data-key="enter">enter</button>
+    <button type="button" data-key="tab">tab</button>
+    <button type="button" data-key="backspace">⌫</button>
+    <button type="button" data-key="up" title="Previous command on the device">↑</button>
+    <button type="button" data-key="down">↓</button>
+    <button type="button" data-key="ctrlc" class="warn">ctrl+c</button>
+    <button type="button" data-key="ctrld" class="hide-sm">ctrl+d</button>
+    <button type="button" data-key="esc" class="hide-sm">esc</button>
+  </div>
+
+  <form class="input" id="form" autocomplete="off">
+    <span class="prompt" aria-hidden="true">›</span>
+    <textarea id="cmd" rows="1" placeholder="command — enter sends, shift+enter adds a line" spellcheck="false" autocapitalize="off"></textarea>
+    <label class="select compact" title="Line ending added on send">
+      <select id="eol"><option value="lf" selected>LF</option><option value="crlf">CRLF</option><option value="cr">CR</option><option value="none">none</option></select>
+    </label>
+    <button class="send" type="submit">send</button>
+  </form>
+</main>
+
+<footer class="foot">
+  <span>iUART · <a href="https://github.com/adm1nsys/ESP32-iUART" target="_blank" rel="noopener">github.com/adm1nsys/ESP32-iUART</a></span>
+  <span id="demo-note" hidden>demo mode — no device connected</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
