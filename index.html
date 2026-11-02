@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>iUART — adm1nsys</title>
+    <meta name="description" content="A wireless serial console: an ESP32 on the UART of any device, its console in the browser.">
+    <meta name="theme-color" content="#070707" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/adm1nsys/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/adm1nsys/assets/css/style.css">
+    <link rel="stylesheet" href="/adm1nsys/kit/project.css">
+  </head>
+  <body>
+    <div class="backdrop backdrop-short" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <header class="page-head">
+        <p class="eyebrow">ESP32 · XIAO ESP32-C6 · Arduino</p>
+        <h1>iUART</h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="actions">
+          <a class="btn btn-primary" data-download="iuart-esp32-wroom-32.bin"
+             href="https://github.com/adm1nsys/ESP32-iUART/releases/latest/download/iuart-esp32-wroom-32.bin">
+            <span data-i18n="dlWroom"></span>
+          </a>
+          <a class="btn" data-download="iuart-xiao-esp32c6.bin"
+             href="https://github.com/adm1nsys/ESP32-iUART/releases/latest/download/iuart-xiao-esp32c6.bin">
+            <span data-i18n="dlXiao"></span>
+          </a>
+          <a class="btn" href="web/" data-i18n="demo"></a>
+          <a class="btn btn-ghost" href="https://github.com/adm1nsys/ESP32-iUART" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <p class="meta" data-i18n="meta"></p>
+      </header>
+
+      <figure class="card shot">
+        <img src="docs/screenshot.png" width="1280" height="800" alt="iUART web console" data-i18n-alt="shotAlt">
+      </figure>
+
+      <div class="folds">
+        <details class="card fold" open>
+          <summary><span data-i18n="featuresTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="featuresBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="installTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="installBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="wiringTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body">
+            <p data-i18n="wiringIntro"></p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th></th><th>ESP32 WROOM-32</th><th>XIAO ESP32-C6</th><th data-i18n="thDevice"></th></tr></thead>
+                <tbody>
+                  <tr><td>UART1 RX</td><td>GPIO 16</td><td>D7 (GPIO 17)</td><td>← TX</td></tr>
+                  <tr><td>UART1 TX</td><td>GPIO 17</td><td>D6 (GPIO 16)</td><td>→ RX</td></tr>
+                  <tr><td>UART2 RX</td><td>GPIO 25</td><td>—</td><td>← TX</td></tr>
+                  <tr><td>UART2 TX</td><td>GPIO 26</td><td>—</td><td>→ RX</td></tr>
+                  <tr><td>GND</td><td>GND</td><td>GND</td><td>GND</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p data-i18n="wiringNote"></p>
+          </div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="devTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="devBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="historyTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="historyBody"></div>
+        </details>
+
+        <details class="card fold" id="versions" open>
+          <summary><span data-i18n="versionsTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-releases></div>
+        </details>
+      </div>
+    </main>
+
+    <script>
+      const REPO = 'https://github.com/adm1nsys/ESP32-iUART';
+      const file = (path, label = path) => `<a href="${REPO}/blob/main/${path}" target="_blank" rel="noopener"><code>${label}</code></a>`;
+      window.PROJECT = {
+        repo: 'adm1nsys/ESP32-iUART',
+        license: 'GPL-3.0',
+        langs: ['de', 'en'],
+        fallback: [{ label: 'iUART (main, zip)', url: `${REPO}/archive/refs/heads/main.zip` }],
+        i18n: {
+          de: {
+            lead: 'Eine serielle Konsole über WLAN. Einen ESP32 an den UART eines beliebigen Geräts anschließen — Arduino, Linux-Board, Router, anderer Mikrocontroller — und dessen Konsole im Browser auf Handy oder Computer lesen und bedienen. Kein USB-UART-Adapter, kein Kabel bis zum Schreibtisch.',
+            dlWroom: 'Firmware ESP32 WROOM-32',
+            dlXiao: 'Firmware XIAO ESP32-C6',
+            demo: 'Demo ausprobieren',
+            meta: 'Fertige Firmware · bei 0x0 flashen · ohne Internet nutzbar',
+            shotAlt: 'iUART-Webkonsole',
+            featuresTitle: 'Was es kann',
+            featuresBody: '<ul><li><strong>Live-Konsole</strong> im Browser — Farben und Steuerzeichen bereinigt, Autoscroll, Zeitstempel, Log als Datei speichern.</li><li><strong>Tippen wie im Terminal</strong> — Enter, Tab, Backspace, ↑ / ↓ (Shell-Verlauf des Geräts), Strg+C, Strg+D, Esc; LF, CRLF, CR oder kein Zeilenende; eigener Befehlsverlauf.</li><li><strong>Zwei Ports auf dem ESP32</strong> (UART1 / UART2), einer auf dem XIAO ESP32-C6; Baudrate von 9600 bis 1,5 M, im Betrieb umschaltbar.</li><li><strong>Stumme Zeilen</strong> — Meldungen, die ein Gerät endlos wiederholt, werden gezählt statt den Bildschirm zu fluten.</li><li><strong>Funktioniert überall</strong> — verbindet sich mit dem WLAN (DHCP oder feste Adresse), sonst öffnet es einen eigenen Access Point. Erreichbar als <code>http://iuart.local</code>.</li><li><strong>Eigenständig</strong> — die Seite steckt komprimiert in der Firmware: keine Fonts, Bibliotheken oder CDNs.</li></ul>',
+            installTitle: 'Installieren',
+            installBody: `<p><strong>Fertige Firmware:</strong> oben herunterladen und bei Adresse <code>0x0</code> flashen — im Browser mit <a href="https://espressif.github.io/esptool-js/" target="_blank" rel="noopener">ESP Web Tools</a> oder mit <code>esptool.py write_flash 0x0 iuart-….bin</code>. Sie startet als Access Point <strong>iUART</strong> (Passwort <code>iuart-console</code>), die Konsole liegt unter <code>http://192.168.4.1</code>.</p><p><strong>Mit eigenem WLAN</strong> selbst bauen:</p><ol><li>${file('iUART/config.example.h')} nach <code>iUART/config.h</code> kopieren und die Netze eintragen — die Datei ist in <code>.gitignore</code>, Passwörter landen nie im Repository.</li><li><code>iUART/iUART.ino</code> mit dem ESP32-Core von Espressif (3.x) in der Arduino IDE hochladen, oder mit <code>arduino-cli compile --upload --fqbn esp32:esp32:XIAO_ESP32C6 --port /dev/cu.usbmodem1101 iUART</code>.</li><li>Der serielle Monitor (115200) zeigt die Adresse, z. B. <code>Connected: http://192.168.1.100</code>.</li></ol>`,
+            wiringTitle: 'Verkabelung',
+            wiringIntro: 'Datenleitungen kreuzen, Masse verbinden.',
+            thDevice: 'Dein Gerät',
+            wiringNote: 'Nur 3,3-V-Logik. Bei 5-V-Geräten (klassischer Arduino Uno usw.) einen Pegelwandler oder wenigstens einen Spannungsteiler in die Leitung zum ESP32 setzen. Schlägt das Flashen fehl, die TX-Leitung des Geräts kurz abziehen.',
+            devTitle: 'Entwicklung',
+            devBody: `<ul><li>${file('iUART/iUART.ino')} — Firmware: WLAN, HTTP-API, Ringpuffer für die serielle Ausgabe.</li><li>${file('web/index.html', 'web/')} — die Oberfläche; direkt geöffnet läuft sie im Demo-Modus.</li><li>${file('tools/embed_web.py')} — packt <code>web/</code> komprimiert nach <code>iUART/web_ui.h</code>.</li></ul><p>API: <code>GET /api/status</code>, <code>GET /api/logs?since=N</code>, <code>POST /api/send</code>, <code>/api/uart</code>, <code>/api/baud</code>, <code>/api/clear</code>.</p><p>Die CI prüft, dass <code>web_ui.h</code> zu <code>web/</code> passt, baut die Firmware für beide Boards und hängt sie an jedes Release.</p>`,
+            historyTitle: 'Geschichte',
+            historyBody: '<p>2024 entstanden, um ein Luckfox Pico Max ohne USB-UART-Adapter zu debuggen — daher die stumme <code>udhcpc</code>-Zeile in der Standardkonfiguration. Seitdem ein allgemeines Werkzeug für jedes UART-Gerät; 2026 kamen die neue Oberfläche, der XIAO ESP32-C6, der Access-Point-Modus und fertige Firmware dazu.</p>',
+            versionsTitle: 'Versionen'
+          },
+          en: {
+            lead: 'A wireless serial console. Wire an ESP32 to the UART of any device — an Arduino, a Linux board, a router, another microcontroller — and read and type into its console from a browser on your phone or computer. No USB-UART adapter, no cable to the desk.',
+            dlWroom: 'Firmware ESP32 WROOM-32',
+            dlXiao: 'Firmware XIAO ESP32-C6',
+            demo: 'Try the demo',
+            meta: 'Ready-made firmware · flash at 0x0 · works without internet',
+            shotAlt: 'iUART web console',
+            featuresTitle: 'What it does',
+            featuresBody: '<ul><li><strong>Live console</strong> in the browser — colours and control sequences cleaned up, autoscroll, timestamps, save the log as a file.</li><li><strong>Typing like a terminal</strong> — Enter, Tab, Backspace, ↑ / ↓ (shell history on the device), Ctrl+C, Ctrl+D, Esc; LF, CRLF, CR or no line ending; your own command history.</li><li><strong>Two ports on ESP32</strong> (UART1 / UART2), one on XIAO ESP32-C6; baud rate from 9600 to 1.5 M, switchable live.</li><li><strong>Muted lines</strong> — messages a device repeats endlessly are counted instead of flooding the screen.</li><li><strong>Works anywhere</strong> — joins your Wi-Fi (DHCP or a fixed address), and if none is in reach opens its own access point. Reachable as <code>http://iuart.local</code>.</li><li><strong>Self-contained</strong> — the page is gzipped into the firmware: no fonts, libraries or CDNs.</li></ul>',
+            installTitle: 'Install',
+            installBody: `<p><strong>Ready-made firmware:</strong> download it above and flash it at address <code>0x0</code> — in the browser with <a href="https://espressif.github.io/esptool-js/" target="_blank" rel="noopener">ESP Web Tools</a> or with <code>esptool.py write_flash 0x0 iuart-….bin</code>. It starts as the access point <strong>iUART</strong> (password <code>iuart-console</code>); the console is at <code>http://192.168.4.1</code>.</p><p><strong>With your own Wi-Fi</strong>, build it yourself:</p><ol><li>Copy ${file('iUART/config.example.h')} to <code>iUART/config.h</code> and add your networks — it is in <code>.gitignore</code>, so passwords never get committed.</li><li>Upload <code>iUART/iUART.ino</code> from the Arduino IDE with Espressif’s ESP32 core (3.x), or with <code>arduino-cli compile --upload --fqbn esp32:esp32:XIAO_ESP32C6 --port /dev/cu.usbmodem1101 iUART</code>.</li><li>The serial monitor (115200) prints the address, e.g. <code>Connected: http://192.168.1.100</code>.</li></ol>`,
+            wiringTitle: 'Wiring',
+            wiringIntro: 'Cross the data lines and share ground.',
+            thDevice: 'Your device',
+            wiringNote: '3.3 V logic only. For 5 V devices (classic Arduino Uno, etc.) put a level shifter or at least a divider on the line into the ESP32. If flashing fails, disconnect the device’s TX line for a moment.',
+            devTitle: 'Development',
+            devBody: `<ul><li>${file('iUART/iUART.ino')} — firmware: Wi-Fi, HTTP API, ring buffer for the serial output.</li><li>${file('web/index.html', 'web/')} — the interface; opened directly it runs in demo mode.</li><li>${file('tools/embed_web.py')} — packs <code>web/</code> gzipped into <code>iUART/web_ui.h</code>.</li></ul><p>API: <code>GET /api/status</code>, <code>GET /api/logs?since=N</code>, <code>POST /api/send</code>, <code>/api/uart</code>, <code>/api/baud</code>, <code>/api/clear</code>.</p><p>CI checks that <code>web_ui.h</code> matches <code>web/</code>, builds the firmware for both boards and attaches it to every release.</p>`,
+            historyTitle: 'History',
+            historyBody: '<p>Built in 2024 to debug a Luckfox Pico Max without a USB-UART adapter at hand — hence the muted <code>udhcpc</code> line in the default config. Since then a general tool for any UART device; in 2026 it got a new interface, XIAO ESP32-C6 support, the access point fallback and ready-made firmware.</p>',
+            versionsTitle: 'Versions'
+          }
+        }
+      };
+    </script>
+    <script src="/adm1nsys/kit/project.js"></script>
+  </body>
+</html>

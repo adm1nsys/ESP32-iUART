@@ -1,10 +1,19 @@
-# iUART
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/banner-light.svg">
+  <img src=".github/readme/banner-dark.svg" alt="iUART — A wireless serial console for any UART device" width="100%">
+</picture>
 
-[![Build](https://github.com/adm1nsys/ESP32-iUART/actions/workflows/build.yml/badge.svg)](https://github.com/adm1nsys/ESP32-iUART/actions/workflows/build.yml)
+<p>
+  <a href="https://adm1nsys.github.io/ESP32-iUART/"><img src="https://img.shields.io/badge/Website-070707?style=for-the-badge&logo=safari&logoColor=white" alt="Website"></a>
+  <a href="https://github.com/adm1nsys/ESP32-iUART/releases/latest/download/iuart-esp32-wroom-32.bin"><img src="https://img.shields.io/badge/Download_ESP32_WROOM--32-070707?style=for-the-badge&logo=espressif&logoColor=white" alt="Download firmware for ESP32 WROOM-32"></a>
+  <a href="https://github.com/adm1nsys/ESP32-iUART/releases/latest/download/iuart-xiao-esp32c6.bin"><img src="https://img.shields.io/badge/Download_XIAO_ESP32--C6-070707?style=for-the-badge&logo=espressif&logoColor=white" alt="Download firmware for XIAO ESP32-C6"></a>
+  <a href="https://adm1nsys.github.io/ESP32-iUART/web/"><img src="https://img.shields.io/badge/Demo-070707?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Try the interface (demo)"></a>
+  <a href="https://adm1nsys.github.io/ESP32-iUART/#versions"><img src="https://img.shields.io/badge/All_versions-070707?style=for-the-badge&logo=github&logoColor=white" alt="All versions"></a>
+  <a href="https://github.com/adm1nsys/ESP32-iUART/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/adm1nsys/ESP32-iUART/build.yml?style=for-the-badge&label=Build&labelColor=070707&color=434343" alt="Build"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-070707?style=for-the-badge&labelColor=070707&color=434343" alt="GPL-3.0 license"></a>
+</p>
 
 **A wireless serial console.** Wire an ESP32 to the UART of any device — an Arduino, a Linux board, a router, another microcontroller — and read and type into its console from a browser on your phone or computer. No USB-UART adapter, no cable to the desk.
-
-**[Try the interface (demo) →](https://adm1nsys.github.io/ESP32-iUART/web/)**
 
 ![iUART web console](docs/screenshot.png)
 
