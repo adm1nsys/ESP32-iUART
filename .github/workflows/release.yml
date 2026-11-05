@@ -1,0 +1,47 @@
+name: Release
+
+# Publishing a release on GitHub builds the firmware for every board and attaches it
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing release tag to attach the firmware to'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  firmware:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - board: esp32-wroom-32
+            fqbn: esp32:esp32:esp32
+          - board: xiao-esp32c6
+            fqbn: esp32:esp32:XIAO_ESP32C6
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG }}
+      - uses: arduino/setup-arduino-cli@v2
+      - name: ESP32 core
+        run: |
+          arduino-cli config init
+          arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+      - name: Compile for ${{ matrix.board }}
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} --output-dir out iUART
+      - name: Attach to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp out/iUART.ino.merged.bin iuart-${{ matrix.board }}.bin
+          gh release upload "$TAG" iuart-${{ matrix.board }}.bin --clobber
